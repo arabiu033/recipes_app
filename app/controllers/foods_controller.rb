@@ -9,11 +9,13 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    if @food.save
-      respond_to do |format|
-     format.hmtml {redirect_to @food, notice: 'Food was successfully created.'}
-    else
-      render :new
+    respond_to do |format|
+      if @food.save
+      format.hmtml {redirect_to food_path, notice: 'Food was successfully created.'}
+      else
+        flash[:error] = @food.errors.full_messages
+        format.html { redirect_to new_food_path }
+      end
     end
   end
 
@@ -22,6 +24,7 @@ class FoodsController < ApplicationController
     @food.destroy
     respond_to do |format|
     format.html { redirect_to food_path(@food), notice: 'Food was successfully destroyed.' }
+    end
   end
 
   private
