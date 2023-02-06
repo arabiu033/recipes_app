@@ -10,7 +10,8 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.save
-      redirect_to @food, notice: 'Food was successfully created.'
+      respond_to do |format|
+     format.hmtml {redirect_to @food, notice: 'Food was successfully created.'}
     else
       render :new
     end
@@ -19,7 +20,8 @@ class FoodsController < ApplicationController
   def destroy
     @food =Food.find(params[:id])
     @food.destroy
-    redirect_to @food, notice: 'Food was successfully destroyed.'
+    respond_to do |format|
+    format.html { redirect_to food_path(@food), notice: 'Food was successfully destroyed.' }
   end
 
   private
