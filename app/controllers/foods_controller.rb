@@ -9,10 +9,10 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    @food.user = current_user
+    @food.user = User.first
     respond_to do |format|
       if @food.save
-        format.hmtml { redirect_to food_path, notice: 'Food was successfully created.' }
+        format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
       else
         flash[:error] = @food.errors.full_messages
         format.html { redirect_to new_food_path }
@@ -31,6 +31,6 @@ class FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :qunatity, :user_id)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
 end
