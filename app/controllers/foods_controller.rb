@@ -9,6 +9,7 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.user = current_user
     respond_to do |format|
       if @food.save
       format.hmtml {redirect_to food_path, notice: 'Food was successfully created.'}
