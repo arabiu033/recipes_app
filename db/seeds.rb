@@ -16,5 +16,6 @@ User.all.each do |user|
   a = Random.rand(1..5)
   a.times do
     FactoryGirl.create(:recipe, :user => user)
+    FactoryGirl.create(:food, :user => user)
   end
 end
