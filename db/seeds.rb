@@ -13,7 +13,7 @@ a.times do
 end
 
 User.all.each do |user|
-  a = Random.rand(3..8)
+  a = Random.rand(1..5)
   a.times do
     FactoryGirl.create(:recipe, :user => user)
   end
