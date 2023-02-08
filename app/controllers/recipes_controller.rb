@@ -10,11 +10,12 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @foods = RecipeFood.all.where('recipe_id = ?', @recipe.id )
   end
 
   def destroy
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    redirect_to recipes_path, notice: "Deleted post: #{recipe.name}"
+    redirect_to recipes_path, notice: "Deleted Recipe: #{recipe.name}"
   end
 end
