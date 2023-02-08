@@ -12,18 +12,3 @@ class PublicRecipesController < ApplicationController
     redirect_to recipe_path(Recipe.find(params[:id]))
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
