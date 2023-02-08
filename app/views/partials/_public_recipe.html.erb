@@ -1,0 +1,10 @@
+<article class='recipe'>
+  <div class='recipe-name'>
+    <h2><%= link_to public_recipe.name, recipe_path(public_recipe) %></h2>
+    <p>By: <%= public_recipe.user.name %> </p>
+  </div>
+  <div>
+    <p>Total food items: </p>
+    <p>Total price: $</p>
+  </div>
+</article>
