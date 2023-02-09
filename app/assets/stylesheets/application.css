@@ -42,9 +42,9 @@ tr:nth-child(even) {
   background-color: #ddd;
 }
 
-.delete-btn {
+.add-food-btn {
   position: absolute;
-  top: 20px;
+  top: 60px;
   right: 70px;
   padding: 0.3rem;
   margin-bottom: 0.5rem;
@@ -80,4 +80,105 @@ form input[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.recipe {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 2px solid #000;
+}
+
+.recipe p {
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.recipe-name h2 a {
+  font-size: 28px;
+  color: #07c;
+  text-decoration: none;
+}
+
+.r-name {
+  margin: 0;
+  text-align: center;
+}
+
+.pub-recipe {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+}
+
+.recipe-prep {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-prep p {
+  margin: 10px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  align-self: self-end;
+}
+
+.divider {
+  margin-bottom: 1rem;
+}
+
+.link-btn {
+  display: inline-flex;
+  gap: 50px;
+}
+
+.link-btn:hover {
+  text-decoration: none;
+}
+
+.show-list-btn,
+.add-ingredient-btn {
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 5px #000;
+  text-decoration: none;
+}
+
+nav {
+  background-color: #eee;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
 }
