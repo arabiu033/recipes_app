@@ -44,7 +44,7 @@ tr:nth-child(even) {
 
 .add-food-btn {
   position: absolute;
-  top: 20px;
+  top: 60px;
   right: 70px;
   padding: 0.3rem;
   margin-bottom: 0.5rem;
@@ -160,5 +160,29 @@ label {
   box-shadow: 2px 2px 5px #000;
   text-decoration: none;
 }
+
+nav {
+  background-color: #eee;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
 
 
