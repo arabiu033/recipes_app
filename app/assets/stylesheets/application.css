@@ -42,7 +42,7 @@ tr:nth-child(even) {
   background-color: #ddd;
 }
 
-.delete-btn {
+.add-food-btn {
   position: absolute;
   top: 20px;
   right: 70px;
@@ -99,3 +99,66 @@ form input[type="submit"] {
   color: #0077cc;
   text-decoration: none;
 }
+
+.r-name {
+  margin: 0;
+  text-align: center;
+}
+
+.pub-recipe {
+  display: flex;
+  flex-direction: column;
+  padding: .8rem;
+}
+
+.recipe-prep {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-prep p {
+  margin: 10px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  align-self: self-end;
+}
+
+.divider {
+  margin-bottom: 1rem;
+}
+
+.link-btn {
+  display: inline-flex;
+  gap: 50px;
+}
+
+.link-btn:hover {
+  text-decoration: none;
+}
+
+.show-list-btn, 
+.add-ingredient-btn {
+  padding: .3rem;
+  margin-bottom: 1rem;
+  border: 2px solid #000;
+  background-color: none;
+  box-shadow: 2px 2px 5px #000;
+  text-decoration: none;
+}
+
+
