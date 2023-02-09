@@ -8,3 +8,28 @@
   <label for="public">Public</label>
   <input type="checkbox" id="public" name="public" value="1" />
 </div>
+<div>
+  <%= link_to 'Generate shoping list', recipe_path(@recipe) %>
+  <%= link_to 'Add Ingridients', new_food_path(:recipe => @recipe) %>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |f| %>
+      <tr>
+        <td><%= f.food.name %></td>
+        <td><%= "#{f.food.quantity}#{f.food.measurement_unit}" %></td>
+        <td><%= f.food.price * f.food.quantity %></td>
+        <td><%= link_to 'Remove', recipe_path(@recipe), data: { turbo_method: "delete", confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>

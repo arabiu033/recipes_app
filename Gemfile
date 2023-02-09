@@ -9,6 +9,9 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
+# Use for the devise gem as the session and account manager for the application
+gem 'devise'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
@@ -63,6 +66,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]

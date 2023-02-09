@@ -5,11 +5,16 @@ class FoodsController < ApplicationController
 
   def new
     @food = Food.new
+    return unless params.key? :recipe
+
+    @recipe = Recipe.find(params[:recipe])
   end
 
   def create
     @food = Food.new(food_params)
-    @food.user = User.first
+    @food.user = current_user
+    @recipe = Recipe.find(params[:recipe]) if params.key? :recipe
+    RecipeFood.create('quantity' => @food.quantity, 'food' => @food, 'recipe' => @recipe)
     respond_to do |format|
       if @food.save
         format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
