@@ -1,17 +1,26 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @foods = Food.all
   end
 
   def new
     @food = Food.new
+    return unless params.key? :recipe
+
+    @recipe = Recipe.find(params[:recipe])
   end
 
   def create
     @food = Food.new(food_params)
-    @food.user = User.first
+    @food.user = current_user
     respond_to do |format|
       if @food.save
+        if params.key? :recipe
+          @recipe = Recipe.find(params[:recipe])
+          RecipeFood.create('quantity' => @food.quantity, 'food' => @food, 'recipe' => @recipe)
+        end
         format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
       else
         flash[:error] = @food.errors.full_messages

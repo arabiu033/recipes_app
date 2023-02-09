@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @recipes = Recipe.all
 
@@ -10,11 +12,12 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @foods = RecipeFood.where('recipe_id = ?', @recipe.id)
   end
 
   def destroy
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    redirect_to recipes_path, notice: "Deleted post: #{recipe.name}"
+    redirect_to recipes_path, notice: "Deleted Recipe: #{recipe.name}"
   end
 end
