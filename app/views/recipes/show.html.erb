@@ -10,7 +10,7 @@
 </div>
 <div>
   <%= link_to 'Generate shoping list', recipe_path(@recipe) %>
-  <%= link_to 'Add Ingridients', new_food_path(:recipe => @recipe) %>
+  <%= link_to 'Add Ingridients', new_food_path(:recipe => @recipe) if can? :create, @recipe %>
 </div>
 <table>
   <thead>
@@ -27,8 +27,8 @@
     <% @foods.each do |f| %>
       <tr>
         <td><%= f.food.name %></td>
-        <td><%= "#{f.food.quantity}#{f.food.measurement_unit}" %></td>
-        <td><%= f.food.price * f.food.quantity %></td>
+        <td><%= f.food.quantity_value %></td>
+        <td><%= f.food.value_price %></td>
         <td><%= link_to 'Remove', recipe_path(@recipe), data: { turbo_method: "delete", confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
