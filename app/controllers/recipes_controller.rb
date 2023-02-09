@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @recipes = Recipe.all
 
@@ -10,7 +12,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = RecipeFood.all.where('recipe_id = ?', @recipe.id)
+    @foods = RecipeFood.where('recipe_id = ?', @recipe.id)
   end
 
   def destroy

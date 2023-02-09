@@ -1,6 +1,8 @@
 class PublicRecipesController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @public_recipes = Recipe.where('public = ?', true)
+    @public_recipes = Recipe.where('public = ?', true).order(updated_at: :desc)
 
     respond_to do |format|
       format.html # index.html.erb
