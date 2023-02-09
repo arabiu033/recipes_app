@@ -12,6 +12,8 @@ gem 'sprockets-rails'
 # Use for the devise gem as the session and account manager for the application
 gem 'devise'
 
+gem 'letter_opener'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 

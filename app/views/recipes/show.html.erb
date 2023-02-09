@@ -29,7 +29,7 @@
         <td><%= f.food.name %></td>
         <td><%= f.food.quantity_value %></td>
         <td><%= f.food.value_price %></td>
-        <td><%= link_to 'Remove', recipe_path(@recipe), data: { turbo_method: "delete", confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', recipe_path(@recipe), data: { turbo_method: "delete", confirm: 'Are you sure?' } if can? :destroy, f.food %></td>
       </tr>
     <% end %>
   </tbody>
