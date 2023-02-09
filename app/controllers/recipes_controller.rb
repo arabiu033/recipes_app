@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = RecipeFood.all.where('recipe_id = ?', @recipe.id )
+    @foods = RecipeFood.all.where('recipe_id = ?', @recipe.id)
   end
 
   def destroy
