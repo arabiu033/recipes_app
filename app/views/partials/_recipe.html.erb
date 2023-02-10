@@ -1,0 +1,9 @@
+<% if can? :destroy, recipe %>
+  <article class='recipe'>
+  <div class='recipe-name'>
+    <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    <p><%= link_to "REMOVE", recipe_path(recipe), data: { turbo_method: "delete" } %> </p>
+  </div>
+  <p><%= recipe.description %></p>
+  </article>
+<% end %>

@@ -1,0 +1,41 @@
+<% if !user_signed_in? %>
+<%= link_to 'Back', public_recipes_path %>
+<%end%>
+<h2 class="r-name"><%= @recipe.name %></h2>
+<div class="pub-recipe">
+ <label for="public">Public
+ <input type="checkbox" id="public" name="public" value="1" />
+ </label>
+  
+  <div class="recipe-prep">
+    <p>Preparation time: <%= @recipe.preparation_time %> hour</p>
+    <p>Cooking time: <%= @recipe.cooking_time %> hour</p>
+    <p><%= @recipe.description %></p>
+  </div>
+</div>
+<div class="link-btn">
+  <%= link_to 'Generate shoping list', recipe_path(@recipe), class: "show-list-btn" %>
+  <%= link_to 'Add Ingredients', new_food_path(:recipe => @recipe), class: "add-ingredient-btn" if can? :create, @recipe %>
+</div>
+ <hr class="divider">
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+      <%# <th colspan="3"></th> %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foods.each do |f| %>
+      <tr>
+        <td><%= f.food.name %></td>
+        <td><%= f.food.quantity_value %></td>
+        <td><%= f.food.value_price %></td>
+        <td><%= link_to 'Remove', food_path(f.food), data: { turbo_method: "delete", confirm: 'Are you sure?' } if can? :destroy, f.food %></td>
+      </tr>
+    <% end %>
+  </tbody>
