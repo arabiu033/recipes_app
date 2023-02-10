@@ -117,12 +117,12 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Aminu Rabiu**
 
 - GitHub: [Aminu Rabiu](https://github.com/arabiu033/recipes_app.git)
 - LinkedIn: [Aminu Rabiu](https://www.linkedin.com/in/arabiu033/)
 
-👤 **Author2**
+👤 **Muokwugwo Okechukwu**
 
 - GitHub: [Muokwugwo Okechukwu](https://github.com/Okechukwu-muokwugwo/)
 - LinkedIn: [Muokwugwo Okechukwu](https://www.linkedin.com/in/okeimuokwugwo)
