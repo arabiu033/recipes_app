@@ -1,3 +1,6 @@
+<% if !user_signed_in? %>
+<%= link_to 'Back', public_recipes_path %>
+<%end%>
 <h2 class="r-name"><%= @recipe.name %></h2>
 <div class="pub-recipe">
  <label for="public">Public

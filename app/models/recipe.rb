@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods, dependent: :delete_all
 
   validates :name, presence: true, length: { in: 5..30 }
-  validates :description, presence: true, length: { in: 10..360 }
+  validates :description, presence: true, length: { in: 1..3600 }
   validates :cooking_time, presence: true, length: { in: 1..1000 }, numericality: { greater_than: 0.0 }
   validates :preparation_time, presence: true, length: { in: 1..1000 }, numericality: { greater_than: 0.0 }
 

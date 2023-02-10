@@ -11,7 +11,8 @@
   </head>
 
   <body>
-  <nav>
+  <% if user_signed_in? %>
+  <nav >
   <ul>
     <li>
       <%= link_to "Foods", foods_path %>
@@ -22,11 +23,15 @@
     <li>
       <%= link_to "Public Recipes", public_recipes_path %>
     </li>
-       <li>
+    <li>
       <%= link_to "Shopping Lists", general_shoping_lists_path %>
+    </li>
+     <li>
+      <%= link_to "Sign Out", destroy_user_session_path %>
     </li>
   </ul>
 </nav>
+<% end %>
    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
