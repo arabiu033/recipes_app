@@ -1,7 +1,0 @@
-<% if !user_signed_in? %>
-<%= link_to 'Sign in', new_user_session_path %>
-<%end%>
-<h1> Public Recipes </h1>
-<section class='recipes'>
-  <%= render partial: "/partials/public_recipe", collection: @public_recipes %>
-</div>
