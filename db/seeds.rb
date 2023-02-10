@@ -10,7 +10,7 @@ User.delete_all
 puts "Create users"
 a = Random.rand(8..15)
 a.times do
-  FactoryGirl.create(:user)
+  FactoryGirl.create(:user, :confirmed)
 end
 
 User.all.each do |user|
