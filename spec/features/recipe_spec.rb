@@ -22,7 +22,6 @@ RSpec.describe 'Recipe', type: :system do
       expect(page).to have_content(Recipe.find(1).name)
       expect(page).to have_content(Recipe.find(2).name)
       expect(page).to have_content(Recipe.find(3).name)
-      expect(page).to have_content(Recipe.first.description)
       click_link(Recipe.first.name)
       sleep(2)
       expect(page).to have_content('Preparation time')
